@@ -1,0 +1,33 @@
+name: code
+description: "Gaming App to simulate future Arduino connexion and behavior."
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.1 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  #flutter_blue: ^0.8.0
+  #flutter_bluetooth_serial: ^0.4.0
+  all_bluetooth: ^0.1.0
+  flutter_blue_plus: ^1.4.0
+  get: ^4.6.5
+  #bluetooth_classic: ^0.0.1
+  #flutter_bluetooth_basic: ^0.1.7
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.0
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/logoTPV5.png
+

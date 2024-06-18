@@ -1,8 +1,11 @@
 import 'dart:math';
 
+import 'package:all_bluetooth/all_bluetooth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+
+import './all_bluetooth.dart';
 
 class PlayPage extends StatefulWidget {
   @override
@@ -45,6 +48,15 @@ class _PlayPageState extends State<PlayPage> {
       leftPosition = positionsListe[nextPosition];
       print('left change to : ${leftPosition}');
     });
+    sendPoints();
+  }
+
+  void sendPoints() async {
+    if ((leftPosition >= 120 && leftPosition <= 220) && topPosition == 50 && _isLeft) {
+      print('vous avez marquez un panier !!!');
+      await Future.delayed(const Duration(seconds: 1));
+      AllBluetooth().sendMessage('Panier marqué !');
+    }
   }
 
   @override

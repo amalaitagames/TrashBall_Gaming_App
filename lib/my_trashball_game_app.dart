@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:all_bluetooth/all_bluetooth.dart';
 import 'home_page.dart';
 
 class MyTrashBallGameApp extends StatelessWidget {
@@ -8,8 +8,14 @@ class MyTrashBallGameApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomePage(),
+    return StreamBuilder(
+      stream: AllBluetooth().listenForConnection,
+      builder: (context, snapshot) {
+        var device = snapshot.data?.device;
+        print('update $device');
+      return const MaterialApp(
+        home: HomePage(),
+      ); },
     );
   }
 }

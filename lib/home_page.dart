@@ -1,7 +1,8 @@
 import 'package:code/all_bluetooth.dart';
-import 'package:code/basic_blue.dart';
-import 'package:code/plus_blue_view.dart';
-import 'package:code/plus_bluetooth.dart';
+import 'package:code/bleAlternatives/basic_blue.dart';
+import 'package:code/bleAlternatives/plus_blue_view.dart';
+import 'package:code/bleAlternatives/plus_bluetooth.dart';
+import 'package:code/tchat.dart';
 import 'package:flutter/material.dart';
 
 import 'PlayPage.dart';
@@ -46,23 +47,43 @@ class HomePage extends StatelessWidget {
                   child: Container(
                 alignment: Alignment.center,
                 color: const Color.fromRGBO(38, 60, 101, 100),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                child: Column(
                   children: [
-                    ElevatedButton(
-                      style: ButtonStyle(
-                        foregroundColor:
-                            MaterialStateProperty.all(Colors.blueAccent),
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          ElevatedButton(
+                            style: ButtonStyle(
+                              foregroundColor:
+                                  MaterialStateProperty.all(Colors.blueAccent),
+                            ),
+                            child: const Text('Commencer la partie'),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => PlayPage()));
+                            },
+                          ),
+                          ElevatedButton(
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => AllBluetoothClass()));
+                              },
+                              child: Text('bluetooth')),
+                        ],
                       ),
-                      child: const Text('Commencer la partie'),
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => PlayPage()));
-                      },
                     ),
-                    ElevatedButton(onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => AllBluetoothClass()));
-                    }, child: Text('bluetooth'))
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                      ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => TchatPage()));
+                          },
+                          child: Text('Tchat'))
+                    ])
                   ],
                 ),
               ))

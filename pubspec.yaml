@@ -15,6 +15,7 @@ dependencies:
   all_bluetooth: ^0.1.0
   flutter_blue_plus: ^1.4.0
   get: ^4.6.5
+  provider: ^6.1.2
   #bluetooth_classic: ^0.0.1
   #flutter_bluetooth_basic: ^0.1.7
 
@@ -30,4 +31,30 @@ flutter:
 
   assets:
     - assets/logoTPV5.png
+    - assets/panier.png
+    - assets/panier.gif
+    - assets/ballon.png
+    - assets/Rack_empty.png
+    - assets/Rack_1Ball.png
+    - assets/Rack_2Balls.png
+    - assets/Rack_3Balls.png
+    - assets/terrain.png
+    - assets/sprite_point_bonus4.png
+    - assets/sprite_point_bonus3.png
+    - assets/sprite_point_bonus2.png
+    - assets/sprite_precision_bonus1.png
+    - assets/sprite_precision_bonus2.png
+    - assets/sprite_precision_bonus3.png
+    - assets/sprite_precision_bonus4.png
+    - assets/sprite_precision_bonus5.png
+    - assets/sprite_precision_bonus6.png
+    - assets/sprite_precision_bonus7.png
+    - assets/sprite_precision_bonus8.png
+    - assets/sprite_precision_bonus9.png
+    - assets/sprite_precision_bonus10.png
+    - assets/Seconde_Chance_Bonus.png
+    - assets/count_before_bonus0.png
+    - assets/count_before_bonus1.png
+    - assets/count_before_bonus2.png
+    - assets/count_before_bonus3.png
 

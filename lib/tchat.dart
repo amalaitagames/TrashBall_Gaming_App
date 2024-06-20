@@ -1,16 +1,27 @@
 import 'package:all_bluetooth/all_bluetooth.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class TchatPage extends StatefulWidget {
+  final String testParam;
+  TchatPage(this.testParam);
+
   @override
   State<TchatPage> createState() => _TchatPageState();
 }
 
 class _TchatPageState extends State<TchatPage> {
+
   List<String> listeMessages = ['test'];
   TextEditingController controller = TextEditingController();
+  late String testParam = widget.testParam;
+  @override
+  void initState() {
+    controller.text = testParam;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

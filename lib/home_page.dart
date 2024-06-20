@@ -1,7 +1,4 @@
 import 'package:code/all_bluetooth.dart';
-import 'package:code/bleAlternatives/basic_blue.dart';
-import 'package:code/bleAlternatives/plus_blue_view.dart';
-import 'package:code/bleAlternatives/plus_bluetooth.dart';
 import 'package:code/tchat.dart';
 import 'package:flutter/material.dart';
 
@@ -80,7 +77,7 @@ class HomePage extends StatelessWidget {
                       ElevatedButton(
                           onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => TchatPage()));
+                                builder: (context) => TchatPage('Test passer un param')));
                           },
                           child: Text('Tchat'))
                     ])

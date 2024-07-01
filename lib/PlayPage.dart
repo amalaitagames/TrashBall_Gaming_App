@@ -39,50 +39,54 @@ class _PlayPageState extends State<PlayPage> {
             height: context.height,
             child: Column(
               children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(
-                      flex: 4,
-                      child: Container(
-                        padding: const EdgeInsets.fromLTRB(8.0, 10.0, 8.0, 0),
-                        child: Text(
-                          'Score: ${gameState.score} / ${gameState.nbrTir}',
-                          style: TextStyle(fontSize: 20),
-                          textAlign: TextAlign.end,
+                Container(
+                  color: Color.fromRGBO(213, 119, 24, 1.0),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        flex: 4,
+                        child: Container(
+                          padding: const EdgeInsets.fromLTRB(8.0, 10.0, 8.0, 0),
+                          child: Text(
+                            'Score: ${gameState.score} / ${gameState.nbrTir}',
+                            style: TextStyle(fontSize: 20),
+                            textAlign: TextAlign.end,
+                          ),
                         ),
                       ),
-                    ),
-                    Expanded(
-                      flex: 2,
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(8.0, 10.0, 8.0, 0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text('Bonus: '),
-                            if (gameState.bucketsLeftBeforeBonus != 0 &&
-                                !gameState.bonusChoose)
-                              Image(
-                                  image: AssetImage(
-                                      gameState.countBeforeBonusPng)),
-                            if (chosenBonus != null)
-                              Image(image: AssetImage(chosenBonus.img))
-                          ],
+                      Expanded(
+                        flex: 2,
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(8.0, 10.0, 8.0, 0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text('Bonus: '),
+                              if (gameState.bucketsLeftBeforeBonus != 0 &&
+                                  !gameState.bonusChoose)
+                                Image(
+                                    image: AssetImage(
+                                        gameState.countBeforeBonusPng)),
+                              if (chosenBonus != null)
+                                Image(image: AssetImage(chosenBonus.img))
+                            ],
+                          ),
                         ),
-                      ),
-                    )
-                  ],
+                      )
+                    ],
+                  ),
                 ),
                 Expanded(
                   flex: 2,
                   child: Container(
                     height: 100,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         image: DecorationImage(
                             scale: 0.42,
-                            image: AssetImage('assets/terrain.png'))),
+                            image: AssetImage('assets/terrain.png')),
+                        color: Colors.black12),
                     child: Stack(
                       alignment: Alignment.topCenter,
                       fit: StackFit.expand,
@@ -181,8 +185,12 @@ class _PlayPageState extends State<PlayPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+          shape: CircleBorder(),
           onPressed: _togglePosition, // Call _togglePosition when pressed
-          child: Text('Tirer'),
+          child: Text(
+            'Tirer',
+            style: TextStyle(color: Colors.white),
+          ),
           backgroundColor: gameState.isShootPossible
               ? Colors.green
               : Colors.black12), // Icon to display on the button

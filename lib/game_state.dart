@@ -118,7 +118,7 @@ class GameState {
       await Future.delayed(const Duration(seconds: 1));
       panier = panierGif;
       setOnBasketScoreValues();
-      AllBluetooth().sendMessage('Panier marqué +1');
+      AllBluetooth().sendMessage('score: $score');
       await Future.delayed(const Duration(seconds: 2));
       refresh();
     } else {

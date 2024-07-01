@@ -15,8 +15,6 @@ class _AllBluetoothClassState extends State<AllBluetoothClass> {
 
   void getDevices() async {
     devices = await allBluetooth.getBondedDevices();
-    print('devices: $devices');
-    print('connexions: ${allBluetooth.listenForConnection}');
   }
 
 
@@ -36,9 +34,6 @@ class _AllBluetoothClassState extends State<AllBluetoothClass> {
     return StreamBuilder(
         stream: AllBluetooth().streamBluetoothState,
         builder: (context, snapshot) {
-          if(snapshot.hasData) {
-            print(snapshot);
-          }
           return Scaffold(
             appBar: AppBar(
               title: Text('Connexion Bluetooth'),
@@ -52,7 +47,6 @@ class _AllBluetoothClassState extends State<AllBluetoothClass> {
                     onPressed: () {
                       allBluetooth.startBluetoothServer();
                       allBluetooth.listenForConnection.isBroadcast;
-                      //allBluetooth.instance.startDiscovery();
                     },
                     icon: Icon(Icons.network_wifi),
                   ),

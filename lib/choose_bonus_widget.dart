@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:code/entity/EBonus.dart';
+import 'package:TrashBall/entity/EBonus.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

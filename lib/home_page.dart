@@ -1,8 +1,8 @@
-import 'package:code/all_bluetooth.dart';
-import 'package:code/tchat.dart';
+import 'package:TrashBall/tchat.dart';
 import 'package:flutter/material.dart';
 
 import 'PlayPage.dart';
+import 'all_bluetooth.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

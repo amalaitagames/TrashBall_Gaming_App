@@ -1,5 +1,5 @@
 import 'package:all_bluetooth/all_bluetooth.dart';
-import 'package:code/searchNewDevicesBle.dart';
+import 'package:TrashBall/searchNewDevicesBle.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,8 +15,6 @@ class _AllBluetoothClassState extends State<AllBluetoothClass> {
 
   void getDevices() async {
     devices = await allBluetooth.getBondedDevices();
-    print('devices: $devices');
-    print('connexions: ${allBluetooth.listenForConnection}');
   }
 
 

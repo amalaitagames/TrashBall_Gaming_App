@@ -1,7 +1,8 @@
-import 'package:code/choose_bonus_widget.dart';
-import 'package:code/game_state.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'choose_bonus_widget.dart';
+import 'game_state.dart';
 
 class PlayPage extends StatefulWidget {
   @override
@@ -24,10 +25,8 @@ class _PlayPageState extends State<PlayPage> {
   @override
   Widget build(BuildContext context) {
     final chosenBonus = gameState.chosenBonus;
-    print(chosenBonus);
     setState(() {
       gameState.chosenBonus = chosenBonus;
-      print(gameState.chosenBonus);
     });
     return Scaffold(
       appBar: AppBar(
@@ -82,7 +81,7 @@ class _PlayPageState extends State<PlayPage> {
                     height: 100,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                            scale: 0.1,
+                            scale: 0.42,
                             image: AssetImage('assets/terrain.png'))),
                     child: Stack(
                       alignment: Alignment.topCenter,

@@ -2,8 +2,8 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:all_bluetooth/all_bluetooth.dart';
-import 'package:code/entity/EBonus.dart';
-import 'package:code/entity/ETypeBonus.dart';
+import 'package:TrashBall/entity/EBonus.dart';
+import 'package:TrashBall/entity/ETypeBonus.dart';
 
 class GameState {
   final void Function() update;
@@ -28,7 +28,23 @@ class GameState {
   int serie = 0;
   String? bordersColor;
   Color? floatingActionBtnColor;
-  List<double> positionsListe = [120, 140, 160, 160, 180, 200, 220, 240, 260, 280];
+  List<double> positionsListe = [
+    120,
+    140,
+    140,
+    140,
+    160,
+    160,
+    160,
+    160,
+    180,
+    180,
+    200,
+    220,
+    240,
+    260,
+    280
+  ];
   EBonus? chosenBonus;
   bool getBonus = false;
   bool bonusChoose = false;
@@ -118,7 +134,6 @@ class GameState {
       await Future.delayed(const Duration(seconds: 1));
       panier = panierGif;
       setOnBasketScoreValues();
-      AllBluetooth().sendMessage('Panier marqué +1');
       await Future.delayed(const Duration(seconds: 2));
       refresh();
     } else {
@@ -143,6 +158,7 @@ class GameState {
       score++;
       bucketsLeftBeforeBonus--;
     }
+    AllBluetooth().sendMessage('score: $score');
     update();
   }
 

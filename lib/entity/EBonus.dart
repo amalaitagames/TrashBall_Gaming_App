@@ -1,4 +1,4 @@
-import 'package:code/entity/ETypeBonus.dart';
+import 'package:TrashBall/entity/ETypeBonus.dart';
 
 enum EBonus {
   // BONUS DE PRÉCISION

@@ -54,7 +54,7 @@ class HomePage extends StatelessWidget {
                           ElevatedButton(
                             style: ButtonStyle(
                               foregroundColor:
-                                  MaterialStateProperty.all(Colors.blueAccent),
+                                  WidgetStateProperty.all(Colors.blueAccent),
                             ),
                             child: const Text('Commencer la partie'),
                             onPressed: () {

@@ -39,8 +39,8 @@ class PlusBlue extends StatelessWidget {
                   StreamBuilder<List<ScanResult>>(
                     stream: controller.scannedDevices,
                     builder: (context, snapshots){
-                      if(snapshots.hasData)
-                      return ListView.builder(
+                      if(snapshots.hasData) {
+                        return ListView.builder(
                           shrinkWrap: true,
                           itemCount: snapshots.data!.length,
                           itemBuilder: (context, index) {
@@ -48,13 +48,13 @@ class PlusBlue extends StatelessWidget {
                             return Card(
                               elevation: 2,
                               child: ListTile(
-                                title: Text(data.device.name),
-                                subtitle: Text(data.device.id.id),
+                                title: Text(data.device.platformName),
+                                subtitle: Text(data.device.remoteId.str),
                                 trailing: Text(data.rssi.toString()),
                               ),
                             );
                       });
-                    else {
+                      } else {
                       return const Center(
                         child: Text("No device found..."),
                       );
